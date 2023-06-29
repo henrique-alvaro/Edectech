@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <title>Edectech</title>
+    </head>
+
+    <body>
+
+        <div id="cabecalho">
+            <img id="logo" src="{{ url_for('static', filename='fotos_site/logo-removebg-preview.png') }}" alt="">
+        </div>
+
+        <header>
+
+            <div id="apresentacao">
+                
+                <div id="container">
+
+                    <h1>Uma plataforma inteligente pensada em você</h1>
+                    <p>A Edectech, oferece soluções inovadoras em educação <br> com foco em aproveitar a tecnologia e melhorar <br> os resultados dos alunos.</p>
+                    
+                    <div id="containerBtn">
+
+                        <div id="btnEntrar">
+                            <a href="{{ url_for('login') }}"><button>Entrar</button></a>
+                        </div>
+
+                        <div id="btnCadastre-se">
+                            <a href="{{ url_for('login') }}"><button>Cadastre-se</button></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="bannerDiv">
+                    <img id="banner" src="{{ url_for('static', filename='fotos_site/banner.svg') }}" alt="">
+                </div>
+           
+
+            </div>
+            
+        </header>
+
+        <main>
+            <h2>VENHA FAZER PARTE DO FUTURO !</h2>
+
+
+            <div id="tabela">
+                <div id="organizacao"><img src="{{ url_for('static', filename='fotos_site/calendar.png') }}" alt=""><p>Organização integrada aos estudos.</p></div>
+                
+                <div id="container-tabela">
+
+                    <div id="tabela-right">
+                        
+                        <div id="aprenda"><img src="{{ url_for('static', filename='fotos_site/learn.png') }}" alt=""><p>Aprenda no seu ritmo, no seu lugar.</p></div>
+                        <div id="alto"><img src="{{ url_for('static', filename='fotos_site/highPerformance.png') }}" alt=""><p>Alto desempenho nos estudos.</p></div>
+                        <div id="como"><img src="{{ url_for('static', filename='fotos_site/rigthPath.png') }}" alt=""><p>Como trilhar no caminho certo.</p></div>
+                
+                    </div>
+
+                    <div id="tabela-right-down">
+                        
+                        <div id="seguindo"><img src="{{ url_for('static', filename='fotos_site/following.png') }}" alt=""><p>Seguindo a alta tendência.</p></div>
+                        <div id="desenvolva"><img src="{{ url_for('static', filename='fotos_site/develop.png') }}" alt=""><p>Desenvolva habilidades de forma prática</p></div>
+                        <div id="faca"><img src="{{ url_for('static', filename='fotos_site/community.png') }}" alt=""><p>Faça parte de uma comunidade inovadora</p></div>
+                
+                    </div>
+
+                </div>
+                
+            </div>
+            
+            <section>
+
+                <h3>Por que escolher a plataforma <br>Edectech?</h3>
+                <p>Com a edectech, você pode acessar uma biblioteca de cursos e recursos online para ajudá-lo a aprimorar seu conhecimento. De uma seleção abrangente de tópicos a orientação e suporte abrangentes, a edectech está aqui para revolucionar sua educação, assuma o controle de sua educação hoje.</p>
+                
+                <div id="container-tabela2">
+
+                    <div id="up">
+
+                        <div id="forum"><h4>fórum exclusivo</h4> <img src="{{ url_for('static', filename='fotos_site/cellphone.png') }}" alt=""> <p>Tire dúvidas técnicas de forma estruturada
+                            e receba nosso suporte.</p>
+                        </div> 
+
+                        <div id="formacao"><h4>Formação completa</h4> <img src="{{ url_for('static', filename='fotos_site/certificate.png') }}" alt=""> <p>Comece do zero e avance na direção das
+                            suas primeiras oportunidades na área.</p>
+                        </div>
+
+                    </div>
+
+                    <div id="down">
+
+                        <div id="projetos"><h4>Projetos profissionais</h4> <img src="{{ url_for('static', filename='fotos_site/projects.png') }}" alt=""> <p>Aprenda na prática enquanto desenvolve
+                            aplicações de alto nível.</p>
+                        </div> 
+
+                        <div id="programa"><h4>Programa de especialização</h4><img src="{{ url_for('static', filename='fotos_site/program.png') }}" alt=""><p>Aprenda na prática enquanto desenvolve
+                            aplicações de alto nível.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3 id="conheca">Conheça nossas carreiras <br>clicando no botão abaixo</h3>
+
+                <div>
+                    <button id="btnCarreiras">carreiras</button>
+                </div>
+
+            </section>
+
+            <section id="estudeOndeQuiser">
+
+                <div id="left">
+                    <h2>Estude onde quiser !</h2>
+                    <p>Descubra um novo mundo de aprendizado com a nossa plataforma de ensino online! Aqui estão algumas razões convincentes para você escolher utilizar nossa plataforma:</p>
+               
+                    <ul>
+                        <li>Flexibilidade de estudos</li>
+                        <li>Experiência interativa</li>
+                        <li>Suporte automatizado</li>
+                        <li>Comunidade engajada</li>
+                        <li>Valorização da sua carreira</li>
+                    </ul>
+
+                    <button id="baixeAppBtn">baixe o app</button>
+
+                </div>
+
+                <div id="right">
+                    <img src="{{ url_for('static', filename='fotos_site/appOnCellphone.png') }}" alt="">
+                </div>
+
+            </section>
+
+            <section id="mercado">
+                <h2>A Edectech te prepara para se destacar no mercado.</h2>
+
+                <div id="containerMercado">
+                    <div id="left">
+                        <h1>Aprenda tecnologias emergentes</h1>
+                        <p>Os nossos cursos e programas de formação são criados em conjunto com especialistas das empresas mais inovadoras do mundo, aplicando uma metodologia para que você domine as tecnologias utilizadas no mercado e também mergulhe nas novas e mais atuais tecnologias que impactarão o futuro dos negócios digitais.</p>
+                    
+                        <div id="leftDown">
+                            <h1>Pratique com desafios de código</h1>
+                            <p>Potencializamos o seu talento e aprimoramos as suas habilidades de pensamento computacional e resolução de desafios reais através de experiências práticas de codificação em nossa plataforma personalizada e exclusiva.</p>
+                        </div>
+                    
+                    </div>
+
+                    <div id="right">
+                        <h1>Atualize com a nossa plataforma</h1>
+                        <p>Desenvolva projetos inovadores e crie soluções em conjunto com experts para manter o seu portfólio atualizado. Aplique na prática todos os conceitos e tecnologias aprendidas, criando um grande diferencial para os seus processos seletivos.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <article>
+                <div id="left"><h3>Tire suas dúvidas</h3><p>Entre em contato com a Edectech - Soluções Educacionais <br><br> Na Edectech, nos esforçamos para fornecer aos nossos clientes as melhores soluções de educação disponíveis. Se você tiver alguma dúvida sobre nossos produtos e serviços, não hesite em nos contatar. <br><br> Estamos ansiosos ouvir você!</p></div>
+                <div id="right"><img src="{{ url_for('static', filename='fotos_site/question.png') }}" alt=""></div>
+            </article>
+
+        </main>
+
+        <footer>
+
+            <div id="container-footer">
+                <img src="{{ url_for('static', filename='fotos_site/logo.png') }}" alt="">
+                
+                <div id="sobre">
+                    <h6>Sobre</h6>
+                    <p>quem somos <br>para empresas <br> para escolas <br> termos de uso <br> politica de privacidade</p>
+                </div>
+
+                <div id="fale">
+                    <h6>Fale conosco</h6>
+                    <p>ajuda e suporte <br> perguntas frequentes <br> investidores <br> ensine na edectech</p>
+                </div>
+
+                <div id="programas">
+                    <h6>Programas</h6>
+                    <p>blog <br> carreiras</p>
+                </div>
+            </div>
+
+            <div id="imagens">
+                <img src="{{ url_for('static', filename='fotos_site/linkedin.png') }}" alt="">
+                <img src="{{ url_for('static', filename='fotos_site/instagram.png') }}" alt="">
+                <img src="{{ url_for('static', filename='fotos_site/twitter.png') }}" alt="">
+                <img src="{{ url_for('static', filename='fotos_site/facebook.png') }}" alt="">
+            </div>
+
+        </footer>
+
+    </body>
+</html>

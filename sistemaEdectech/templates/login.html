@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>cadastro</title>
+</head>
+
+<style>
+    
+    *{
+        margin: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: white;
+    }
+
+    
+
+    #imagem{
+        padding-top: 2vw;
+        padding-left: 3vw;
+        text-align: left;
+    }
+    
+    main{
+        height: 100vh;
+        width: 100vw;   
+        background-image: linear-gradient( to right, #072042, #8700AD, #8700AD, #8700AD );
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        width: 8vw;
+    }
+
+    #container{
+        display: flex;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+    }
+
+    h1{
+        font-size: 3vw;
+        margin-bottom: 2vw;
+    }
+
+    p{
+        font-size: 1.5vw;
+    }
+
+    input{
+        border-radius: 20vw;
+        border: 3px solid #9340FF;
+        width: 19vw;
+        height: 2vw;
+        margin-bottom: 2px;
+        text-align: center;
+        font-size: 0.8vw;
+        color: black;
+        outline: none;
+    }
+
+    #email{
+        background-image: url(fotos_site/email.png);
+        background-repeat: no-repeat;
+        background-size: 1.5vw;
+        background-position-x: 0.6vw;
+        background-position-y: 0.2vw;
+
+    }
+
+    #senha{
+        background-image: url(imgCadastro/password.png);
+        background-repeat: no-repeat;
+        background-size: 2vw;
+        background-position-x: 0.5vw;
+        background-position-y: 0.1vw;
+    }
+
+    #user{
+        background-image: url(imgCadastro/user.png);
+        background-repeat: no-repeat;
+        background-size: 2vw;
+        background-position-x: 0.5vw;
+        background-position-y: 0.1vw;
+    }
+
+    #phone{
+        background-image: url(imgCadastro/phone.png);
+        background-repeat: no-repeat;
+        background-size: 1.6vw;
+        background-position-x: 0.6vw;
+        background-position-y: 0.2vw;
+    }
+
+
+    #left{
+        margin-right: 5VW;
+    }
+
+    .button{
+        width: 10vw;
+        height: 3vw;
+        color: white;
+        font-weight: bold;
+        background-image:linear-gradient(to left, #FF3C5F, #ff3c59, #9340FF, #9340FF);
+        border-radius: 3vw;
+        font-size: 1.1vw;
+        border: none;
+        margin-top: 1.4vw;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+
+    #cardLeft{
+        width: 25vw;
+        height: 29vw;
+        background-color: #04031E;
+        border-radius: 1vw;
+        margin-top: 2vw;
+        border: 5px solid #9340FF;
+    }
+
+    #cardLeft>h1{
+        margin-top: 5vw;
+    }
+
+    #cardRight{
+        width: 25vw;
+        height: 29vw;
+        background-color: #04031E;
+        border-radius: 1vw;
+        margin-top: 2vw;
+        border: 5px solid #9340FF;
+    }
+
+    #cardRight>h1{
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    #cardLeft>p{
+        text-align: left;
+        margin-top: 1vw;
+        margin-left: 3vw;
+        color: #9340FF;
+        font-size: 1vw;
+    }
+
+    @media only screen and (max-width: 1090px) {
+        #container{
+            display: grid;
+        }
+
+        #left{
+           margin-left: 4vw;
+        }
+
+        #cardLeft>p{
+            font-size: 2vw;
+        }
+
+        #left>h1{
+            display: none;
+        }
+
+        #left>p{
+            font-weight: bold;
+            font-size: 3vw;
+            margin-bottom: 4vw;
+        }
+
+        #right>h1{
+            display: none;
+        }
+        
+        #right>p{
+            font-weight: bold;
+            font-size: 3vw;
+            margin-bottom: 4vw;
+        }
+
+        input{
+            width: 30vw;
+            padding: 0.8vw;
+            font-size: 2vw;
+            margin-bottom: 2vw;
+        }
+
+        .button{
+            height: 4vw;
+            font-size: 1.5vw;
+        }
+
+        #cardLeft{
+            width: 40vw;
+            margin-bottom: 10vw;
+            margin-left: none;
+            height: 45vw;
+        }
+
+        #cardRight{
+            width: 40vw;
+            height: 45vw;
+            margin-left: 4vw;
+        }
+
+        #email{
+            background-size: 2.5vw;
+            background-position-y: 0.5vw;
+        }
+
+        #senha{
+            background-size: 3vw;
+            background-position-y: 0.2vw;
+        }
+
+        #user{
+            background-size: 3vw;
+            background-position-y: 0.2vw;
+        }
+
+        #phone{
+            background-size: 2.5vw;
+            background-position-y: 0.6vw;
+        }
+
+
+    }
+</style>
+
+<body>
+
+    <main>
+
+        <div id="imagem">
+            <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='fotos_site/logo.png')}}" alt=""></a>
+        </div>
+
+        <div id="container">
+
+            <div id="left">
+                <h1>Já tem cadastro?</h1>
+                <p>Faça seu login</p>
+                <form id="cardLeft" method="POST" action="">
+                    {{ form_login.csrf_token }}
+                    <h1>Entrar</h1>
+                    <!-- formulario do login email com os devidos tramentos no arquivo forms -->
+                    <div>
+                        <p>Email</p>
+                        {% if form_login.email.errors %}
+                            {{ form_login.email() }}
+                        <div>
+                            {% for erro in form_login.email.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form_login.email() }}
+                        {% endif %}
+                    </div>
+                    <!-- formulario do login senha com os devidos tramentos no arquivo forms -->
+                    <div>
+                        <p>Senha</p>
+                        {% if form_login.senha.errors %}
+                            {{ form_login.senha() }}
+                        <div>
+                            {% for erro in form_login.senha.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form_login.senha() }}
+                        {% endif %}
+                    </div>
+
+                    {{ form_login.botao_login(class="button") }}
+                    <p>esqueci minha senha!</p>
+                </form>
+            </div>
+
+            <div id="right">
+                <h1>Começe agora grátis</h1>
+                <p>crie sua conta</p>
+                <form id="cardRight" method="POST" action="">
+                    {{ form_login.csrf_token }}
+                    <h1>Cadastre-se</h1>
+                    <!-- formulario do nome com tratamento no arquivo forms -->
+                    <!-- aqui verifica o erro de acordo com o tratamento -->
+                    <div>
+                        <p class="info">Nome</p>
+                        {% if form_criarconta.username.errors %}
+                            {{ form_criarconta.username() }}
+                        <div>
+                            {% for erro in form_criarconta.username.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form_criarconta.username() }}
+                        {% endif %}
+                    </div>
+                    <!-- formulario do email com tratamento no arquivo forms -->
+                    <div>
+                        <p class="info">Email</p>
+                        {% if form_criarconta.email.errors %}
+                            {{ form_criarconta.email() }}
+                        <div>
+                            {% for erro in form_criarconta.email.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form_criarconta.email() }}
+                        {% endif %}
+                    </div>
+                    <!-- formulario do senha com tratamento no arquivo forms -->
+                    <div>
+                        <p class="info">Senha</p>
+                        {% if form_criarconta.senha.errors %}
+                            {{ form_criarconta.senha() }}
+                        <div>
+                            {% for erro in form_criarconta.senha.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form_criarconta.senha() }}
+                        {% endif %}
+                    </div>
+                    <!-- formulario do confirmaçao de senha com tratamento no arquivo forms -->
+                    <div>
+                        <p class="info">Confirmar Senha</p>
+                        {% if form_criarconta.confirmacao_senha.errors %}
+                            {{ form_criarconta.confirmacao_senha() }}
+                        <div>
+                            {% for erro in form_criarconta.confirmacao_senha.errors %}
+                                {{ erro }}
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form_criarconta.confirmacao_senha() }}
+                        {% endif %}
+                    </div>
+
+                    {{ form_criarconta.botao_criarconta(class="button") }}
+                </form>
+            </div>
+
+        </div>
+        
+    </main>
+    
+</body>
+</html>

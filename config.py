@@ -1,0 +1,4 @@
+DEBUG = True
+
+SECRET_KEY = '6b942028a651e9166f4e94fc26384603'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///edectech.db'
