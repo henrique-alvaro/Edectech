@@ -11,8 +11,22 @@
 
     <body>
 
-        <div id="cabecalho">
-            <img id="logo" src="{{ url_for('static', filename='fotos_site/logo-removebg-preview.png') }}" alt="">
+        <a href="#cabecalho" id="btn-fixed"><img src="{{ url_for('static', filename='fotos_site/arrow.png') }}" alt=""></a>
+        
+        <div id="container-nav">
+
+            <div id="cabecalho">
+                <img id="logo" src="{{ url_for('static', filename='fotos_site/logo-removebg-preview.png') }}" alt="">
+            </div>
+
+            <div id="navegacao">
+                <a href="{{ url_for('carreiras') }}"><p>Carreiras</p></a>
+                <a href="#left"><p>Baixe o APP</p></a>
+                <a href="#mercado"><p>Mercado</p></a>
+                <a href="#duvidas"><p>Dúvidas</p></a>
+                <a href="{{ url_for('desenvolvedores') }}"><p>Quem somos</p></a>
+            </div>
+
         </div>
 
         <header>
@@ -27,11 +41,11 @@
                     <div id="containerBtn">
 
                         <div id="btnEntrar">
-                            <a href="{{ url_for('login') }}"><button>Entrar</button></a>
+                            <a href="{{ url_for('login') }}" target="_blank"><button>Entrar</button></a>
                         </div>
 
                         <div id="btnCadastre-se">
-                            <a href="{{ url_for('login') }}"><button>Cadastre-se</button></a>
+                            <a href="{{ url_for('cadastro') }}" target="_blank"><button>cadastre-se</button></a>
                         </div>
 
                     </div>
@@ -59,8 +73,8 @@
                     <div id="tabela-right">
                         
                         <div id="aprenda"><img src="{{ url_for('static', filename='fotos_site/learn.png') }}" alt=""><p>Aprenda no seu ritmo, no seu lugar.</p></div>
-                        <div id="alto"><img src="{{ url_for('static', filename='fotos_site/highPerformance.png') }}" alt=""><p>Alto desempenho nos estudos.</p></div>
-                        <div id="como"><img src="{{ url_for('static', filename='fotos_site/rigthPath.png') }}" alt=""><p>Como trilhar no caminho certo.</p></div>
+                        <div id="alto"><img src="{{ url_for('static', filename='fotos_site/HighPerformance.png') }}" alt=""><p>Alto desempenho nos estudos.</p></div>
+                        <div id="como"><img src="{{ url_for('static', filename='fotos_site/rightPath.png') }}" alt=""><p>Como trilhar no caminho certo.</p></div>
                 
                     </div>
 
@@ -112,7 +126,7 @@
                 <h3 id="conheca">Conheça nossas carreiras <br>clicando no botão abaixo</h3>
 
                 <div>
-                    <button id="btnCarreiras">carreiras</button>
+                    <a href="{{ url_for('carreiras') }}"><button id="btnCarreiras">carreiras</button></a>
                 </div>
 
             </section>
@@ -165,7 +179,7 @@
             </section>
 
             <article>
-                <div id="left"><h3>Tire suas dúvidas</h3><p>Entre em contato com a Edectech - Soluções Educacionais <br><br> Na Edectech, nos esforçamos para fornecer aos nossos clientes as melhores soluções de educação disponíveis. Se você tiver alguma dúvida sobre nossos produtos e serviços, não hesite em nos contatar. <br><br> Estamos ansiosos ouvir você!</p></div>
+                <div id="left"><h3 id="duvidas">Tire suas dúvidas</h3><p>Entre em contato com a Edectech - Soluções Educacionais <br><br> Na Edectech, nos esforçamos para fornecer aos nossos clientes as melhores soluções de educação disponíveis. Se você tiver alguma dúvida sobre nossos produtos e serviços, não hesite em nos contatar. <br><br> Estamos ansiosos para ouvir você!</p></div>
                 <div id="right"><img src="{{ url_for('static', filename='fotos_site/question.png') }}" alt=""></div>
             </article>
 
@@ -178,7 +192,7 @@
                 
                 <div id="sobre">
                     <h6>Sobre</h6>
-                    <p>quem somos <br>para empresas <br> para escolas <br> termos de uso <br> politica de privacidade</p>
+                    <a href="{{ url_for('desenvolvedores') }}"><p>quem somos</a> <br>para empresas <br> para escolas <br> termos de uso <br> politica de privacidade</p>
                 </div>
 
                 <div id="fale">
@@ -188,15 +202,16 @@
 
                 <div id="programas">
                     <h6>Programas</h6>
-                    <p>blog <br> carreiras</p>
+                    <p>blog <a href="{{ url_for('carreiras') }}"><br> carreiras</p></a>
                 </div>
             </div>
 
             <div id="imagens">
-                <img src="{{ url_for('static', filename='fotos_site/linkedin.png') }}" alt="">
-                <img src="{{ url_for('static', filename='fotos_site/instagram.png') }}" alt="">
-                <img src="{{ url_for('static', filename='fotos_site/twitter.png') }}" alt="">
-                <img src="{{ url_for('static', filename='fotos_site/facebook.png') }}" alt="">
+                <a href="https://www.linkedin.com/company/edec-tech/?viewAsMember=true" target="_blank"><img id="linkedin" src="{{ url_for('static', filename='fotos_site/linkedin.png') }}" alt="logo do linkedin"></a>
+                <a href="https://www.instagram.com/edectech_/" target="_blank"><img src="{{ url_for('static', filename='fotos_site/instagram.png') }}" alt="logo do instagram"></a>
+                <a href="https://twitter.com/EdecTech" target="_blank"><img src="{{ url_for('static', filename='fotos_site/twitter.png') }}" alt="logo do twitter"></a>
+                <a href="https://www.facebook.com/profile.php?id=100094238105788" target="_blank"><img src="{{ url_for('static', filename='fotos_site/facebook.png') }}" alt="logo do facebook"></a>
+                <a href="mailto:edectech.contato@gmail.com" target="_blank"><img src="{{ url_for('static', filename='fotos_site/gmail.png') }}" alt="logo do gmail"></a>
             </div>
 
         </footer>

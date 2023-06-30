@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de Perfil</title>
+    <link rel="stylesheet" href="desenvolvedores.css">
+    <script src="https://kit.fontawesome.com/4408524998.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.07em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+/*altura, largura, cor e cetralização do bory para os card*/
+body {
+    background-color: #101728;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+/* titulo da pagina*/
+.titulo{
+    text-align: center;
+    font-size: 200%;
+    padding-top: 5vw;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    color: white;
+}
+/*tag "conteiner" onde esta localizado as section dos cards para definir altura, largura, cor
+e posiçoes*/
+article {
+    width: 100%;
+    height: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vw;
+    margin-bottom: 4.9vw;
+}
+
+/*conteiner com os cards*/
+main.cards {
+    display: flex;
+    padding: 32px;
+}
+/* cards tamanho, posição e cor dos elementos dentro do main e section*/
+main.cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #5E17EB;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 468px;
+    margin-left: 32px;
+}
+/* tirando a margem a esquerda do primeiro card*/
+main.cards section.card:first-child {
+    margin-left: 0;
+}
+/*tamanho da foto*/
+main.cards section.card .foto {
+    width: 120px;
+    margin: 5px;
+}
+/* quantidade que a imagem vai ocupar dentro das tag*/
+main.cards section.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+/*h1 referente ao nome do desenvolvedor*/
+main.cards section.card h1 {
+    font-size: 100%;
+    margin: 5px 0;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+/*h3 referente a função do desenvolvedor*/
+main.cards section.card h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 90%;
+    margin: 5px 0;
+    color: white;
+}
+/*span referente ao texto dentro do card*/
+main.cards section.card span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    max-width: 260px;
+    font-size: 75%;
+    margin-bottom: 13px;
+    color: white;
+    margin-top: auto;
+}
+/*para os links das redes social*/
+a {
+    padding: 0.3rem;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    margin-top: auto;
+
+}
+/*tamanho dos icon das redes social*/
+.fa-brands{
+    font-size: 1.7rem
+}
+
+#logo{
+   text-align: right;
+   margin: 6%;
+}
+
+
+#container-nav{
+    text-align: center;
+    padding-top: 20px;
+}
+
+#home{
+    width: 2.5em;
+    height: 3em;
+    padding-top: 10px;
+}
+
+/*parte de resposividade quando diminuir o display*/
+@media screen and (max-width: 1000px) {
+    main.cards {
+        flex-direction: column;
+    }
+
+    main.cards section.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+
+    main.cards section.card button {
+        font-size: 70%;
+    }
+
+    #logo{
+        display: none;
+    }
+
+}
+
+</style>
+
+<body>
+
+
+
+    <div id="container-nav">
+
+        <div id="navegacao">
+            <a href="{{ url_for('home') }}"><img id="home" src="{{ url_for('static', filename='fotos_site/home.png') }}" alt=""></a>
+        </div>
+
+    </div>
+    <h1 class="titulo">Desenvolvedores</h1>
+
+
+
+    <article>
+        
+        <!--conteiner com os cards-->
+        <main class="cards">
+            <!-- inicio do card de apresentação pessoa-->
+            <section class="card cauan">
+                <div class="foto">
+                    <!--foto social para acompanhar descrição-->
+                    <img src="{{ url_for('static', filename='fotos_site/cauan.jpg') }}" alt="foto de perfil">
+                </div>
+                
+                <h1>Cauan</h1>
+                <h3>Desenvolvedor Front-end</h3>
+
+                <!--span para pequena descrição sobre a pessoa-->
+                <span>
+                    Integrante da equipe de desenvolvimento de interface com uso das tecnologias: Html, CSS e JavaScript  e responsável em coordenar e promover o alinhamento do projeto a entrega.
+                </span>
+                
+                <div class="social">
+                    <a href="https://instagram.com/cauanmassino?igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/cauan-massino-5a169a1b1/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+
+                <!-- fim do card de apresentação pessoa-->
+            </section>
+
+            <!-- inicio do card de apresentação pessoa-->
+            <section class="card henrique">
+
+                <div class="foto">
+                    <!--foto social para acompanhar descrição-->
+                    <img src="{{ url_for('static', filename='fotos_site/henrique.jpg') }}" alt="foto de perfil">
+                </div>
+
+                <h1>Henrique</h1>
+                <h3>Desenvolvedor Back-end
+                </h3>
+
+                <!--span para pequena descrição sobre a pessoa-->
+                <span>
+                    Responsavel por desenvolver o sistema de controle da aplicação e desenvolvimento do banco de dados usando Flask, SqlAlchemy e Sqlite
+                </span>
+                
+                <div class="social">
+                    <a href="https://instagram.com/henriquealvar0?igshid=MzNlNGNkZWQ4Mg==" target="_blank"> <i class="fa-brands fa-instagram"> </i></a>
+                    <a href="https://www.linkedin.com/in/henrique-%C3%A1lvaro-094a57206/" target="_blank"> <i class="fa-brands fa-linkedin"> </i></a>
+                </div>
+                <!-- fim do card de apresentação pessoa-->
+
+            </section>
+
+            <!-- inicio do card de apresentação pessoa-->
+            <section class="card lafaete">
+
+                <div class="foto">
+                    <!--foto social para acompanhar descrição-->
+                    <img src="{{ url_for('static', filename='fotos_site/Lafaete.jpg') }}" alt="foto de perfil">
+                </div>
+
+                <h1>Lafaete</h1>
+                <h3>Analista de Requisitos</h3>
+
+                <!--span para pequena descrição sobre a pessoa-->
+                <span>Design e Front-end ajudou a moldar a aparência e a usabilidade do site,
+                     garantindo uma experiência atraente e intuitiva para os usuários.
+                    Com conhecimento das melhores práticas de design
+                </span>
+                
+                <div class="social">
+                    <a href="https://www.instagram.com/lafaete.alves/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/lafaete-dias-846939190/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <!-- fim do card de apresentação pessoa-->
+
+            </section>
+
+            <!-- inicio do card de apresentação pessoa-->
+            <section class="card luan">
+
+                <div class="foto">
+                    <!--foto social para acompanhar descrição-->
+                    <img src="{{ url_for('static', filename='fotos_site/luan.jpg') }}" alt="foto de perfil">
+                </div>
+
+                <h1>Luan</h1>
+                <h3>Designer <br>Desenvolvedor front-end</h3>
+                <!--span para pequena descrição sobre a pessoa-->
+
+                <span>
+                    Capacitada para trabalhar com web-designer, executou a parte de layout atendendo as funções desejadas para a plataforma. E estruturando e estilizando a plataforma por meio do html e css.
+                </span>
+                
+                <div class="social">
+                    <a href="https://instagram.com/luancr2173?igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/luan-carvalho-711a32180/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+
+            </section>
+            <!-- fim do card de apresentação pessoa-->
+
+        </main>
+        <!-- fiim do conteiner com os cards-->
+    </article>
+
+    <div id="logo"><img src="{{ url_for('static', filename='fotos_site/logo.png') }}" alt=""></div>
+    
+</body>
+</html>
