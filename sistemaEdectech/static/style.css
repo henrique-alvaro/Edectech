@@ -6,6 +6,21 @@ body{
     height: 100vh;
 }
 
+#btn-fixed{
+    position: fixed;
+    bottom: 13%;
+    right: 1%;
+}
+
+#btn-fixed>img{
+    width: 5vh;
+
+}
+
+#btn-fixed.visible{
+    visibility: visible;
+}
+
 header{
     background-color: #101728;
     height: 44vw;
@@ -13,7 +28,33 @@ header{
 }
 
 #cabecalho{
-    height: 4vw;
+    width: 50%;
+    color: white;
+}
+
+#container-nav{
+    display: flex;
+}
+
+#navegacao{
+    display: flex;
+}
+
+#navegacao>a>p{
+    color: white;
+    font-size: 1.3vw;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding-right: 1vw;
+    margin-right: 2vw;
+}
+
+#navegacao{
+    margin-top: 3vw;
 }
 
 #logo{
@@ -22,13 +63,11 @@ header{
     margin-left: 2.5vw;
 }
 
-#apresentacao{
-    text-align: left;
+#apresentacao{ 
     margin-left: 3vw;
     color: white;
     display: flex;
 }
-
 
 #container{
     margin-top: 2vw;
@@ -82,11 +121,6 @@ button{
     font-weight: bold;
     cursor: pointer;
 }
-
-main{
-  
-}
-
 
 h2{
     text-align: center;
@@ -391,11 +425,11 @@ ul{
 }
 
 #mercado{
+    background-color: #06002E;
     padding-top: 5vw;
-    background-image: url(img/planoDeFundo.png);
     background-repeat: no-repeat;
     background-size: 120vw 100vw;
-    height: 66vw;
+    height: 66vw;   
 }
 
 #mercado>h2{
@@ -513,13 +547,13 @@ footer{
 
 #imagens{
     text-align: right;
-    margin-right: 5vw;
-    padding-bottom: 1vw ;
+    margin-right: 2vw;
 }
 
-#imagens>img{
-    width: 3vw;
-    margin-right: 1.4vw;
+
+#imagens>a>img{
+    width: 2%;
+    padding-bottom: 2vw;
 }
 
 @media only screen and (max-width: 600px){

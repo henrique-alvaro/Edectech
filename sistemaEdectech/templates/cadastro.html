@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,13 +104,6 @@
         margin-right: 5VW;
     }
 
-    #right>img{
-        width: 20vw;
-        position: absolute;
-        top: 58%;
-        left: 60%;
-    }
-
     .button{
         width: 10vw;
         height: 3vw;
@@ -139,6 +132,19 @@
         margin-top: 5vw;
     }
 
+    #cardRight{
+        width: 25vw;
+        height: 33vw;
+        background-color: #04031E;
+        border-radius: 1vw;
+        margin-top: 2vw;
+        border: 2px solid #9340FF;
+    }
+
+    #cardRight>h1{
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
 
     #cardLeft>p{
         text-align: left;
@@ -174,6 +180,12 @@
         #right>h1{
             display: none;
         }
+        
+        #right>p{
+            font-weight: bold;
+            font-size: 3vw;
+            margin-bottom: 4vw;
+        }
 
         .input{
             width: 30vw;
@@ -196,7 +208,7 @@
 
         #cardRight{
             width: 40vw;
-            height: 45vw;
+            height: 48vw;
             margin-left: 4vw;
         }
 
@@ -226,52 +238,76 @@
 
     <main>
         <form method="POST" action="">
-            {{ form_login.csrf_token }}
+            {{ form_criarconta.csrf_token }}
             <div id="imagem">
-                <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='fotos_site/logo.png') }}" alt=""></a>
+                <img src="img/logo.png" alt="">
             </div>
 
             <div id="container">
-
-                <div id="left">
-                    <h1>Já tem cadastro?</h1>
-                    <p>Faça seu login</p>
-                    <div id="cardLeft">
-                        <h1>Entrar</h1>
+                <form>
+                <div id="right">
+                    <h1>Começe agora grátis</h1>
+                    <p>Crie sua conta</p>
+                    <div id="cardRight">
+                        <h1>Cadastre-se</h1>
                         <div>
-                            <p>Email</p>
-                            {% if form_login.email.errors %}
-                                {{ form_login.email(class="input") }}
+                            <p>Nome</p>
+                            {% if form_criarconta.username.errors %}
+                                {{ form_criarconta.username(class="input") }}<br>
                             <div>
-                                {% for erro in form_login.email.errors %}
+                                {% for erro in form_criarconta.username.errors %}
                                     {{ erro }}
                                 {% endfor %}
                             </div>
                             {% else %}
-                                {{ form_login.email(class="input") }}
+                                {{ form_criarconta.username(class="input") }}
+                            {% endif %}
+                        </div>
+
+                        <div>
+                            <p>Email</p>
+                            {% if form_criarconta.email.errors %}
+                                {{ form_criarconta.email(class="input") }}<br>
+                            <div>
+                                {% for erro in form_criarconta.email.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_criarconta.email(class="input") }}
                             {% endif %}
                         </div>
 
                         <div>
                             <p>Senha</p>
-                            {% if form_login.senha.errors %}
-                                {{ form_login.senha(class="input") }}
+                            {% if form_criarconta.senha.errors %}
+                                {{ form_criarconta.senha(class="input") }}<br>
                             <div>
-                                {% for erro in form_login.senha.errors %}
+                                {% for erro in form_criarconta.senha.errors %}
                                     {{ erro }}
                                 {% endfor %}
                             </div>
                             {% else %}
-                                {{ form_login.senha(class="input") }}
+                                {{ form_criarconta.senha(class="input") }}
                             {% endif %}
                         </div>
-                        {{ form_login.botao_login(class="button") }}
-                        <p>esqueci minha senha!</p>
-                    </div>
-                </div>
 
-                <div id="right">
-                    <img src="{{ url_for('static', filename='fotos_site/login.svg') }}" alt="">
+                        <div>
+                            <p>Confirmacao Senha</p>
+                            {% if form_criarconta.confirmacao_senha.errors %}
+                                {{ form_criarconta.confirmacao_senha(class="input") }}<br>
+                            <div>
+                                {% for erro in form_criarconta.confirmacao_senha.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_criarconta.confirmacao_senha(class="input") }}
+                            {% endif %}
+                        </div>
+
+                        {{ form_criarconta.botao_criarconta(class="button") }}
+                    </div>
                 </div>
 
             </div>
